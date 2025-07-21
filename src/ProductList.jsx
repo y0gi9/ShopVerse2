@@ -12,66 +12,26 @@ export default function ProductList() {
   }, []);
 
   return (
-    <div className="product-grid" style={{
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      gap: 16,
-      marginBottom: 32,
-    }}>
+    <div className="product-grid">
       {products.map((product) => (
-        <div key={product.id} style={{
-          boxShadow: '0 2px 8px #eee',
-          borderRadius: 8,
-          overflow: 'hidden',
-          background: '#fff',
-          display: 'flex',
-          flexDirection: 'column',
-        }}>
+        <div key={product.id} className="product-card">
           <img
             src={product.image}
             alt={product.name}
-            style={{ width: '100%', height: 160, objectFit: 'cover', borderTopLeftRadius: 8, borderTopRightRadius: 8 }}
+            className="product-img"
           />
-          <div style={{ padding: 14, flex: 1, display: 'flex', flexDirection: 'column' }}>
-            <h2 style={{ fontSize: 18, margin: '0 0 8px 0' }}>{product.name}</h2>
-            <p style={{ color: '#555', margin: 0, marginBottom: 12 }}>{product.description}</p>
+          <div className="product-info">
+            <h2 className="product-title">{product.name}</h2>
+            <p className="product-desc">{product.description}</p>
             <a
               href={`sms:${SMS_PHONE}?body=I'm interested in purchasing: ${encodeURIComponent(product.name)}`}
-              style={{
-                display: 'inline-block',
-                marginTop: 'auto',
-                padding: '12px 0',
-                background: '#22c55e',
-                color: '#fff',
-                borderRadius: 6,
-                textDecoration: 'none',
-                fontWeight: 600,
-                letterSpacing: 1,
-                textAlign: 'center',
-                fontSize: 16,
-                width: '100%',
-                touchAction: 'manipulation',
-              }}
+              className="sms-btn"
             >
               Purchase via SMS
             </a>
           </div>
         </div>
       ))}
-      <style>{`
-        @media (min-width: 600px) {
-          .product-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-          }
-        }
-        @media (min-width: 900px) {
-          .product-grid {
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
-          }
-        }
-      `}</style>
     </div>
   );
 } 
