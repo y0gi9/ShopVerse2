@@ -178,12 +178,6 @@ body {
   }
 }
 
-@media (min-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 36px;
-  }
-}
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {

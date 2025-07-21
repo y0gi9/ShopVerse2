@@ -39,7 +39,7 @@ ProductCard.propTypes = {
 export default function ProductList() {
   return (
     <main>
-      <section className="product-grid">
+      <section className="flex-box">
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}

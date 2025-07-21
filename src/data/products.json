@@ -16,5 +16,11 @@
     "name": "Smart Notebook",
     "description": "A notebook for your next big idea.",
     "image": "https://via.placeholder.com/300x180?text=Smart+Notebook"
-  }
+  },
+  {
+  "id": 4,
+  "name": "Smart Notebook 2",
+  "description": "A notebook for your next big idea.",
+  "image": "https://via.placeholder.com/300x180?text=Smart+Notebook"
+}
 ] 
